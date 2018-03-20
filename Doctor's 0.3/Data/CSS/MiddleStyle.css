@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.middleX{
+    width: auto;
+    height: 1000px;
+}
+
+.middle_left{
+    min-width: 800px;
+    width: 74%;
+    float: left;
+    margin: 5% 0;
+    height: 100%;
+    background-color: rgba(244, 244, 244, 0.9);
+}

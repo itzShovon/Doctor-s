@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.middle_right{
+    float: right;
+    min-width: 300px;
+    margin: 5% 0;
+    width: 26%;
+    height: 1000px;
+    background-color: rgba(214, 234, 124, 1);
+}
+
+.sector{
+    margin-right: 10%;
+    margin-top: 3%;
+    margin-bottom: 5px;
+}
+
+.sector a{
+    position: relative;
+    padding: 3px 7px;
+/*    float: left;*/
+    margin-top: 2%;
+    margin-bottom: 5px;
+}
