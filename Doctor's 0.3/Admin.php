@@ -13,17 +13,26 @@
 <body>
     <div class="Header" id="Header">
         <a href="Home.php"><img src="Data/Images/Icon/Icon.png" alt="Doctor's" height="42" width="42"></a>
+        <?php
+            session_start();
+            if($_SESSION['login_flag'] != 1)
+                $_SESSION['login_flag'] = 0;
+            else{
+                echo '<a href="SignOut.php">Sign Out</a>';
+                echo '<a href="AdminDocument.php">Document</a>';
+            }
+        ?>
     </div>
     <div class="Middle" id="Middle">
         <div class="middle_up" id="middle_up">
             <a class="middle_up_signin" id="middle_up_signin">Sign In</a>
-            <a class="middle_up_signup" id="middle_up_signup">Sign Up</a>
+            <a class="middle_up_update" id="middle_up_update">Update Password</a>
         </div>
         <div class="middle_body" id="middle_body">
             <div class="middle_body_signin" id="middle_body_signin">
                 <?php include 'AdminIn.php' ?>
             </div>
-            <div class="middle_body_signup" id="middle_body_signup">
+            <div class="middle_body_update" id="middle_body_update">
                 <?php include 'AdminUp.php' ?>
             </div>
         </div>

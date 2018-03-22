@@ -9,15 +9,22 @@
 <body>
     <div class="Middle" id="Middle">
         <div class="middle">
-            <form name="signup" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+            <form name="update" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <table>
-                    <tr>
-                        <th>User Name</th>
-                        <td><input class="user_name" id="user_name" name="user_name" type="text" placeholder="User Name" autofocus></td>
-                    </tr>
+                    <?php
+                        if($_SESSION['login_flag'] != 1){
+                    ?>
+                        <tr>
+                            <th>Name</th>
+                            <td><input class="admin_name" id="admin_name" name="admin_name" type="text" placeholder="Name" autofocus></td>
+                        </tr>
+                    <?php
+                        }
+                        else;
+                    ?>
                     <tr>
                         <th>Password</th>
-                        <td><input class="user_password" id="user_password" name="user_password" type="password" placeholder="User Password"></td>
+                        <td><input class="admin_password" id="admin_password" name="user_password" type="password" placeholder="Password"></td>
                     </tr>
                     <tr>
                         <th>Conform Password</th>

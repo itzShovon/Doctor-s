@@ -3,24 +3,48 @@
         include ("config.php");
         
         if(isset($_POST['admin_login'])){
-            if(empty($_POST['admin_name']) AND empty($_POST['admin_password'])){
-                $error_message = ("Give your ID/E-mail and your password");
-                echo "<script type='text/javascript'>alert('$error_message');</script>";
+            if($_SESSION['login_flag'] ! = 1){
+                if(empty($_POST['admin_name']) AND empty($_POST['admin_password'])){
+                    $error_message = ("Give your ID/E-mail and your password");
+                    echo "<script type='text/javascript'>alert('$error_message');</script>";
+                }
+                else if(empty($_POST['admin_name'])){
+                    $error_message = ("Give your Name");
+                    echo "<script type='text/javascript'>alert('$error_message');</script>";
+                }
+                else{
+                    $admin_name = "";
+                    if(isset($_POST['admin_name']))
+                        $admin_name = $_POST['admin_name'];
+                }
             }
-            else if(empty($_POST['admin_name'])){
-                $error_message = ("Give your Name");
-                echo "<script type='text/javascript'>alert('$error_message');</script>";
-            }
+            
+//            if(empty($_POST['admin_name']) AND empty($_POST['admin_password'])){
+//                $error_message = ("Give your ID/E-mail and your password");
+//                echo "<script type='text/javascript'>alert('$error_message');</script>";
+//            }
+//            else if(empty($_POST['admin_name'])){
+//                $error_message = ("Give your Name");
+//                echo "<script type='text/javascript'>alert('$error_message');</script>";
+//            }
             else if(empty($_POST['admin_password'])){
                 $error_message = ("Give your Password");
                 echo "<script type='text/javascript'>alert('$error_message');</script>";
             }
+            else if(empty($_POST['temp_password'])){
+                $error_message = ("Rewrite Password");
+                echo "<script type='text/javascript'>alert('$error_message');</script>";
+            }
+            else if(($_POST['temp_password']) != ($_POST['admin_password'])){
+                $error_message = ("Password didn't match...");
+                echo "<script type='text/javascript'>alert('$error_message');</script>";
+            }
             else{
-                $admin_name = "";
+                $admin_name = $_SESSION['admin_name'];
                 $admin_password = "";
                 
-                if(isset($_POST['admin_name']))
-                    $admin_name = $_POST['admin_name'];
+//                if(isset($_POST['admin_name']))
+//                    $admin_name = $_POST['admin_name'];
                 if(isset($_POST['admin_password']))
                     $admin_password = $_POST['admin_password'];
                 

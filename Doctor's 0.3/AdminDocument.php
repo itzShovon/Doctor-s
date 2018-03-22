@@ -13,7 +13,8 @@
         <div class="header" id="header">
             <div class="header_left" id="header_left">
                 <a href="Home.php"><img src="Data/Images/Icon/Icon.png" alt="Doctor's" height="42" width="42"></a>
-                <a href="AdminUpdate.php">Update Password</a>
+                <a href="Admin.php">Back</a>
+<!--                <a href="AdminUpdate.php">Update Password</a>-->
                 <a href="SignOut.php">Sign Out</a>
             </div>
             <div class="header_right" id="header_right">
