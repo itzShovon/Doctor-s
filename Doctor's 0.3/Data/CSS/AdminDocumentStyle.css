@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.middle_left{
+    overflow-y: auto;
+    color: black;
+    min-width: 800px;
+    width: 74%;
+    margin: 5% 0;
+    padding: 20px 0;
+    float: left;
+    background-color: rgba(244, 244, 244, 0.9);
+}
+
+.doctor_list{
+/*    display: none;*/
+    width: 100%;
+    height: auto;
+}
+
+.doctor_list div{
+    width: 49%;
+    margin: 10px 2px;
+    float: left;
+}
+
+.doctor_info{
+    clear: both;
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.doctor_info .doctor_info_left{
+    float: left;
+    width: 40%;
+    padding-top: 2%;
+}
+
+.doctor_info .doctor_info_left img{
+    width: 40%;
+}
+
+.doctor_info .doctor_info_left h3{
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.doctor_info .doctor_info_left h5{
+    margin-left: 20px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.doctor_info .doctor_info_right{
+    float: right;
+    width: 58%;
+    text-align: left;
+    padding-top: 5%;
+}
+
+.doctor_info .doctor_info_right p{
+    margin-left: 2%;
+}

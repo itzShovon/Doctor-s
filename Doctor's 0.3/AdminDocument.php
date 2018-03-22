@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <title>Doctor Page...</title>
+    <title>Admin Document Page...</title>
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DoctorStyle.css">
-    <link rel="stylesheet" type="text/css" href="Data/CSS/DocumentStyle.css">
+    <link rel="stylesheet" type="text/css" href="Data/CSS/AdminDocumentStyle.css">
 </head>
 
 <body>
@@ -13,7 +13,8 @@
         <div class="header" id="header">
             <div class="header_left" id="header_left">
                 <a href="Home.php"><img src="Data/Images/Icon/Icon.png" alt="Doctor's" height="42" width="42"></a>
-                <a href="Sign.php">Sign In/Up</a>
+                <a href="AdminUpdate.php">Update Password</a>
+                <a href="SignOut.php">Sign Out</a>
             </div>
             <div class="header_right" id="header_right">
                 <form name="search_form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">

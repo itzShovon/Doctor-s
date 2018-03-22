@@ -15,5 +15,26 @@
     float: left;
     margin: 5% 0;
     height: 100%;
-    background-color: rgba(244, 244, 244, 0.9);
+    background-color: rgba(24, 244, 244, 0.9);
+}
+
+.middle_left .middle_left_part1{
+    height: 33%;
+    width: 100%;
+    background-color: aquamarine;
+    margin-bottom: 0.5%;
+}
+
+.middle_left .middle_left_part2{
+    height: 33%;
+    width: 100%;
+    background-color: aquamarine;
+    margin-bottom: 0.5%;
+}
+
+.middle_left .middle_left_part3{
+    height: 33%;
+    width: 100%;
+    background-color: aquamarine;
+    margin-bottom: 0.5%;
 }
