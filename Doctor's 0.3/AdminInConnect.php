@@ -24,7 +24,7 @@
                 if(isset($_POST['admin_password']))
                     $admin_password = $_POST['admin_password'];
                 
-                $statement = $db->prepare("SELECT * FROM `admin` WHERE true");
+                $statement = $db->prepare("SELECT * FROM admin WHERE admin_name = '$admin_name'");
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_OBJ);
                 

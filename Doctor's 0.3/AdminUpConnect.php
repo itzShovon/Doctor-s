@@ -2,10 +2,12 @@
     try{
         include ("config.php");
         
-        if(isset($_POST['admin_login'])){
-            if($_SESSION['login_flag'] ! = 1){
+        if(isset($_POST['update'])){
+            $admin_name = $_SESSION['admin_name'];
+            
+            if($_SESSION['login_flag'] != 1){
                 if(empty($_POST['admin_name']) AND empty($_POST['admin_password'])){
-                    $error_message = ("Give your ID/E-mail and your password");
+                    $error_message = ("Give your Name and your Password");
                     echo "<script type='text/javascript'>alert('$error_message');</script>";
                 }
                 else if(empty($_POST['admin_name'])){
@@ -18,65 +20,67 @@
                         $admin_name = $_POST['admin_name'];
                 }
             }
-            
-//            if(empty($_POST['admin_name']) AND empty($_POST['admin_password'])){
-//                $error_message = ("Give your ID/E-mail and your password");
-//                echo "<script type='text/javascript'>alert('$error_message');</script>";
-//            }
-//            else if(empty($_POST['admin_name'])){
-//                $error_message = ("Give your Name");
-//                echo "<script type='text/javascript'>alert('$error_message');</script>";
-//            }
             else if(empty($_POST['admin_password'])){
-                $error_message = ("Give your Password");
+                $error_message = ("Give your Password to update");
                 echo "<script type='text/javascript'>alert('$error_message');</script>";
             }
             else if(empty($_POST['temp_password'])){
-                $error_message = ("Rewrite Password");
+                $error_message = ("Rewrite Password to update");
                 echo "<script type='text/javascript'>alert('$error_message');</script>";
             }
-            else if(($_POST['temp_password']) != ($_POST['admin_password'])){
-                $error_message = ("Password didn't match...");
-                echo "<script type='text/javascript'>alert('$error_message');</script>";
-            }
-            else{
-                $admin_name = $_SESSION['admin_name'];
-                $admin_password = "";
+            else if(isset($_POST['temp_password']) && isset($_POST['admin_password'])){
+                $temp_password = $_POST['temp_password'];
+                $admin_password = $_POST['admin_password'];
+                if($admin_password == $temp_password){
+                    if(isset($_POST['admin_password']))
+                        $admin_password = $_POST['admin_password'];
                 
-//                if(isset($_POST['admin_name']))
-//                    $admin_name = $_POST['admin_name'];
-                if(isset($_POST['admin_password']))
-                    $admin_password = $_POST['admin_password'];
-                
-                $statement = $db->prepare("SELECT * FROM `admin` WHERE true");
-                $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_OBJ);
-                
-                
-                if(empty($admin_password)){
-                    $_SESSION['admin_name'] = "";
-                    $_SESSION['admin_password'] = "";
+                    $sql = "UPDATE admin SET admin_password=?";
+                    $db->prepare($sql)->execute([$admin_password]);
+                    if(empty($admin_password)){
+                        $_SESSION['admin_name'] = "";
+                        $_SESSION['admin_password'] = "";
+                    }
+                    else{
+                        $_SESSION['admin_name'] = $admin_name;
+                        $_SESSION['admin_password'] = $admin_password;
+                    }
+
+                    $error_message = ("Sucessfull...");
+                    echo "<script type='text/javascript'>alert('$error_message');</script>";
                 }
                 else{
-                    $_SESSION['admin_name'] = $admin_name;
-                    $_SESSION['admin_password'] = $admin_password;
+                    $error_message = ("Pasword didn't match...");
+                    echo "<script type='text/javascript'>alert('$error_message');</script>";
                 }
-                
-                
-                if(empty($result))
-                    echo "<script type='text/javascript'>alert('Non user... Try again...');</script>";
-                else
-                    foreach($result as $row){
-                        if(($admin_password == $row->admin_password) && ($admin_name == $row->admin_name)){
-                            $_SESSION['login_mode'] = 2;
-                            $_SESSION['login_flag'] = 1;
-                            $_SESSION['login_user'] = $row->admin_no;
-                            header ('Location: AdminDocument.php');
-                        }
-                        else;
-                    }
-                echo "<script type='text/javascript'>alert('Non user... Try again...');</script>";
             }
+//            else if(($_POST['temp_password']) == ($_POST['admin_password'])){
+//                $admin_name = $_SESSION['admin_name'];
+//                $admin_password = "";
+//                
+//                if(isset($_POST['admin_password']))
+//                    $admin_password = $_POST['admin_password'];
+//                
+//                $sql = "UPDATE admin SET admin_name=?, admin_password=?";
+//                $db->prepare($sql)->execute([$admin_name, $admin_password]);
+//                
+//                
+//                if(empty($admin_password)){
+//                    $_SESSION['admin_name'] = "";
+//                    $_SESSION['admin_password'] = "";
+//                }
+//                else{
+//                    $_SESSION['admin_name'] = $admin_name;
+//                    $_SESSION['admin_password'] = $admin_password;
+//                }
+//                
+//                $error_message = ("Sucessfull...");
+//                echo "<script type='text/javascript'>alert('$error_message');</script>";
+//            }
+//            else{
+//                $error_message = ("Password didn't match...");
+//                echo "<script type='text/javascript'>alert('$error_message');</script>";
+//            }
         }
     }catch(Exception $e) {
         $error_message = $e->getMessage();

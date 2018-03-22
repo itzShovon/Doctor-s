@@ -1,3 +1,7 @@
+<?php
+    include("AdminDocumentConnect.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -19,7 +23,7 @@
             </div>
             <div class="header_right" id="header_right">
                 <form name="search_form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-                    <input class="doctor_name" id="doctor_name" name="doctor_name" type="text" placeholder="Search by Doctor Name." autofocus>
+                    <input class="user_name" id="user_name" name="user_name" type="text" placeholder="Search by Name." autofocus>
                     <button type="submit" name="user_submit">Search</button>
                 </form>
             </div>
@@ -27,7 +31,34 @@
     </div>
     <div class="Middle" id="Middle">
         <div class="middle_left" id="middle_left">
-            <div class="doctor_list" id="doctor_list">
+            <div class="user_list" id="user_list">
+                <h4>Doctors</h4>
+                <?php foreach($result1 as $row){ ?>
+                <div><a href="AdminDocument.php?id=<?php echo $row->doctor_no; ?>">
+                    <?php echo $row->doctor_name ?>
+                </a></div>
+                <?php } ?>
+                
+                
+                
+<!--
+                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+-->
+                
+                <h4>Hospitals</h4>
+                <?php foreach($result2 as $row){ ?>
+                <div><a href="AdminDocument.php?id=<?php echo $row->hospital_no; ?>">
+                    <?php echo $row->hospital_name ?>
+                </a></div>
+                <?php } ?>
+                
+<!--
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
@@ -37,6 +68,16 @@
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+-->
+                
+                <h4>Blood Donors</h4>
+                <?php foreach($result3 as $row){ ?>
+                <div><a href="AdminDocument.php?id=<?php echo $row->blood_donor_no; ?>">
+                    <?php echo $row->blood_donor_name ?>
+                </a></div>
+                <?php } ?>
+                
+<!--
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
@@ -44,21 +85,15 @@
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
+-->
             </div>
-            <div class="doctor_info" id="doctor_info">
-                <div class="doctor_info_left" id="doctor_info_left">
+            <div class="user_info" id="user_info">
+                <div class="user_info_left" id="user_info_left">
                     <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
                     <h3>Mr. ldkjfiefnldfnm difnelll</h3>
                     <h5>M.B.B.S.[ldfi dlkjfiejldfn jdifjel flsdj djif]</h5>
                 </div>
-                <div class="doctor_info_right" id="doctor_info_right">
+                <div class="user_info_right" id="user_info_right">
                     <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
                     <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
                     <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>

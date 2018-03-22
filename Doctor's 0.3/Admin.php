@@ -25,16 +25,42 @@
     </div>
     <div class="Middle" id="Middle">
         <div class="middle_up" id="middle_up">
-            <a class="middle_up_signin" id="middle_up_signin">Sign In</a>
-            <a class="middle_up_update" id="middle_up_update">Update Password</a>
+            <?php
+//                if($_SESSION['login_flag'] != 1){
+            ?>
+                <a class="middle_up_signin" id="middle_up_signin">Sign In</a>
+            <?php
+//                }
+            ?>
+            
+            <?php
+                if($_SESSION['login_flag'] == 1){
+            ?>
+                <a class="middle_up_update" id="middle_up_update">Update Password</a>
+            <?php
+                }
+            ?>
         </div>
         <div class="middle_body" id="middle_body">
-            <div class="middle_body_signin" id="middle_body_signin">
-                <?php include 'AdminIn.php' ?>
-            </div>
-            <div class="middle_body_update" id="middle_body_update">
-                <?php include 'AdminUp.php' ?>
-            </div>
+            <?php
+//                if($_SESSION['login_flag'] != 1){
+            ?>
+                <div class="middle_body_signin" id="middle_body_signin">
+                    <?php include 'AdminIn.php' ?>
+                </div>
+            <?php
+//                }
+            ?>
+            
+            <?php
+                if($_SESSION['login_flag'] == 1){
+            ?>
+                <div class="middle_body_update" id="middle_body_update">
+                    <?php include 'AdminUp.php' ?>
+                </div>
+            <?php
+                }
+            ?>
         </div>
     </div>
     <div class="Footer" id="Footer"></div>

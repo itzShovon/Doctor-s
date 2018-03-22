@@ -7,6 +7,7 @@
 
 <head>
 <!--    <link rel="stylesheet" type="text/css" href="Data/CSS/Style.css">-->
+    
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                         <td><input class="admin_password" id="admin_password" name="admin_password" type="password" placeholder="Password"></td>
                     </tr>
                     <tr>
-                        <td><button type="submit" name="admin_login" onclick="return RegisterValidation();">SignIn</button></td>
+                        <td><button type="submit" name="admin_login" onclick="return RegisterValidation();">Sign In</button></td>
                         <td><button type="reset">Reset</button></td>
                     </tr>
                 </table>

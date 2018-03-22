@@ -15,53 +15,62 @@
     background-color: rgba(244, 244, 244, 0.9);
 }
 
-.doctor_list{
-/*    display: none;*/
+.user_list{
+    display: none;
     width: 100%;
     height: auto;
 }
 
-.doctor_list div{
+.user_list div{
     width: 49%;
     margin: 10px 2px;
     float: left;
 }
 
-.doctor_info{
+.user_info{
+/*    display: none;*/
     clear: both;
     width: 100%;
     height: auto;
-    display: none;
 }
 
-.doctor_info .doctor_info_left{
+.user_info .user_info_left{
     float: left;
     width: 40%;
     padding-top: 2%;
 }
 
-.doctor_info .doctor_info_left img{
+.user_info .user_info_left img{
     width: 40%;
 }
 
-.doctor_info .doctor_info_left h3{
+.user_info .user_info_left h3{
     margin-left: 20px;
     font-size: 30px;
 }
 
-.doctor_info .doctor_info_left h5{
+.user_info .user_info_left h5{
     margin-left: 20px;
     text-align: left;
     font-size: 20px;
 }
 
-.doctor_info .doctor_info_right{
+.user_info .user_info_right{
     float: right;
     width: 58%;
     text-align: left;
     padding-top: 5%;
 }
 
-.doctor_info .doctor_info_right p{
+.user_info .user_info_right p{
     margin-left: 2%;
+}
+
+h4{
+    width: auto;
+    background-color: rgba(182, 182, 182, 0.7);
+    padding: 10px 0;
+    text-align: center;
+    clear: both;
+    margin: 20px 0;
 }
