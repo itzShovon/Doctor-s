@@ -2,7 +2,7 @@
     try{
         include ("config.php");
         
-        if(isset($_POST['admin_login'])){
+        if(isset($_POST['signin'])){
             if(empty($_POST['admin_name']) AND empty($_POST['admin_password'])){
                 $error_message = ("Give your ID/E-mail and your password");
                 echo "<script type='text/javascript'>alert('$error_message');</script>";
@@ -24,9 +24,22 @@
                 if(isset($_POST['admin_password']))
                     $admin_password = $_POST['admin_password'];
                 
-                $statement = $db->prepare("SELECT * FROM admin WHERE admin_name = '$admin_name'");
-                $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                
+                if($_POST['user_sector'] == "doctor"){
+                    $statement = $db->prepare("SELECT * FROM admin WHERE admin_name = '$admin_name'");
+                    $statement->execute();
+                    $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                }
+                else if($_POST['user_sector'] == "hospital"){
+                    $statement = $db->prepare("SELECT * FROM admin WHERE admin_name = '$admin_name'");
+                    $statement->execute();
+                    $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                }
+                else if($_POST['user_sector'] == "blood_donor"){
+                    $statement = $db->prepare("SELECT * FROM admin WHERE admin_name = '$admin_name'");
+                    $statement->execute();
+                    $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                }
                 
                 
                 if(empty($admin_password)){
@@ -44,7 +57,7 @@
                 else
                     foreach($result as $row){
                         if(($admin_password == $row->admin_password) && ($admin_name == $row->admin_name)){
-                            $_SESSION['login_mode'] = 1;
+                            $_SESSION['login_mode'] = 2;
                             $_SESSION['login_flag'] = 1;
                             $_SESSION['login_user'] = $row->admin_no;
                             header ('Location: AdminDocument.php');

@@ -1,3 +1,7 @@
+<?php
+    include("DoctorConnect.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -25,47 +29,58 @@
     </div>
     <div class="Middle" id="Middle">
         <div class="middle_left" id="middle_left">
-            <div class="doctor_list" id="doctor_list">
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-                <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
-            </div>
-            <div class="doctor_info" id="doctor_info">
-                <div class="doctor_info_left" id="doctor_info_left">
-                    <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
-                    <h3>Mr. ldkjfiefnldfnm difnelll</h3>
-                    <h5>M.B.B.S.[ldfi dlkjfiejldfn jdifjel flsdj djif]</h5>
+            <?php
+                if($view_mode == 0){
+            ?>
+                <div class="doctor_list" id="doctor_list">
+                    <?php foreach($result as $row){ ?>
+                    <div><a href="Doctor.php?id=<?php echo $row->doctor_no; ?>">
+                        <?php echo $row->doctor_name; ?>
+                        <?php echo ', '; ?>
+                        <?php echo $row->doctor_job; ?>
+                    </a></div>
+                    <?php } ?>
                 </div>
-                <div class="doctor_info_right" id="doctor_info_right">
-                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
-                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
-                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
-                    <p>Address: dfjienldfjdlifj 2/3road dfjiendfidjfle</p>
-                    <p>Phone: 08464684156454686</p>
-                    <p>E-mail: jdifjleafjaidjfldjkf@dfjidjf.com</p>
-                    <p>Facebook: facebook.com/jdfiejljljfldjfiejdkfj</p>
+            <?php
+                }
+                else{
+            ?>
+            <?php foreach($result as $row)
+                if($row->doctor_no == $user_ID){
+            ?>
+                <div class="doctor_info" id="doctor_info">
+                    <div class="doctor_info_left" id="doctor_info_left">
+                        <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
+                        <?php
+                            echo "<h3>$row->doctor_name</h3>";
+                            echo "<h5>$row->doctor_degree[$row->doctor_job]</h5>";
+                        ?>
+                    </div>
+                    <div class="doctor_info_right" id="doctor_info_right">
+                        <?php
+                            echo "<p>Rating: $row->doctor_rating</p>";
+                            echo "<p>Location: $row->doctor_region, $row->doctor_city</p>";
+                            echo "<p>Sector: $row->doctor_sector[$row->doctor_degree]</p>";
+                            echo "<p>Works at: $row->doctor_job</p>";
+                            echo "<p>Contact:</p>";
+                            echo "<p>Phone: $row->doctor_phone</p>";
+                            echo "<p>E-Mail: $row->doctor_email</p>";
+                        ?>
+                    </div>
+                    <?php
+                        session_start();
+                        if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode']) == 2){
+                    ?>
+                        <a class="user_info_action" href="AdminDelete.php">Delete</a>
+                        <a class="user_info_action" href="AdminUpdate.php">Update</a>
+                    <?php
+                        }
+                    ?>
                 </div>
-            </div>
+            <?php
+                }
+            }
+            ?>
         </div>
         
         <?php include 'MiddleRight.php' ?>

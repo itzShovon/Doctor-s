@@ -31,7 +31,7 @@
     clear: both;
     width: 100%;
     height: auto;
-    display: none;
+/*    display: none;*/
 }
 
 .doctor_info .doctor_info_left{
@@ -64,4 +64,11 @@
 
 .doctor_info .doctor_info_right p{
     margin-left: 2%;
+}
+
+
+
+.user_info_action{
+    position: relative;
+    top: 15px;
 }

@@ -32,6 +32,9 @@
     clear: both;
     width: 100%;
     height: auto;
+    background-color: rgba(213, 213, 213, 0.6);
+    padding-bottom: 30px;
+    margin: 10px 0;
 }
 
 .user_info .user_info_left{
@@ -41,7 +44,8 @@
 }
 
 .user_info .user_info_left img{
-    width: 40%;
+    width: 150px;
+/*    height: 300px;*/
 }
 
 .user_info .user_info_left h3{
@@ -64,6 +68,11 @@
 
 .user_info .user_info_right p{
     margin-left: 2%;
+}
+
+.user_info_action{
+    position: relative;
+    top: 15px;
 }
 
 h4{

@@ -36,6 +36,8 @@
                 <?php foreach($result1 as $row){ ?>
                 <div><a href="AdminDocument.php?id=<?php echo $row->doctor_no; ?>">
                     <?php echo $row->doctor_name ?>
+                    <?php echo ', '; ?>
+                    <?php echo $row->doctor_job; ?>
                 </a></div>
                 <?php } ?>
                 
@@ -55,6 +57,8 @@
                 <?php foreach($result2 as $row){ ?>
                 <div><a href="AdminDocument.php?id=<?php echo $row->hospital_no; ?>">
                     <?php echo $row->hospital_name ?>
+                    <?php echo ', '; ?>
+                    <?php echo $row->hospital_city; ?>
                 </a></div>
                 <?php } ?>
                 
@@ -73,7 +77,9 @@
                 <h4>Blood Donors</h4>
                 <?php foreach($result3 as $row){ ?>
                 <div><a href="AdminDocument.php?id=<?php echo $row->blood_donor_no; ?>">
-                    <?php echo $row->blood_donor_name ?>
+                    <?php echo $row->blood_donor_name; ?>
+                    <?php echo ', '; ?>
+                    <?php echo $row->blood_donor_job; ?>
                 </a></div>
                 <?php } ?>
                 
@@ -87,6 +93,7 @@
                 <div><a href="#">Mr. sdjfidjf, fdjdjfajd</a></div>
 -->
             </div>
+            <h4>Doctors</h4>
             <div class="user_info" id="user_info">
                 <div class="user_info_left" id="user_info_left">
                     <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
@@ -102,6 +109,46 @@
                     <p>E-mail: jdifjleafjaidjfldjkf@dfjidjf.com</p>
                     <p>Facebook: facebook.com/jdfiejljljfldjfiejdkfj</p>
                 </div>
+                <a class="user_info_action" href="AdminDelete.php">Delete</a>
+                <a class="user_info_action" href="AdminUpdate.php">Update</a>
+            </div>
+            <h4>Hospitals</h4>
+            <div class="user_info" id="user_info">
+                <div class="user_info_left" id="user_info_left">
+                    <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
+                    <h3>Mr. ldkjfiefnldfnm difnelll</h3>
+                    <h5>M.B.B.S.[ldfi dlkjfiejldfn jdifjel flsdj djif]</h5>
+                </div>
+                <div class="user_info_right" id="user_info_right">
+                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
+                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
+                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
+                    <p>Address: dfjienldfjdlifj 2/3road dfjiendfidjfle</p>
+                    <p>Phone: 08464684156454686</p>
+                    <p>E-mail: jdifjleafjaidjfldjkf@dfjidjf.com</p>
+                    <p>Facebook: facebook.com/jdfiejljljfldjfiejdkfj</p>
+                </div>
+                <a class="user_info_action" href="AdminDelete.php">Delete</a>
+                <a class="user_info_action" href="AdminUpdate.php">Update</a>
+            </div>
+            <h4>Blood Donors</h4>
+            <div class="user_info" id="user_info">
+                <div class="user_info_left" id="user_info_left">
+                    <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
+                    <h3>Mr. ldkjfiefnldfnm difnelll</h3>
+                    <h5>M.B.B.S.[ldfi dlkjfiejldfn jdifjel flsdj djif]</h5>
+                </div>
+                <div class="user_info_right" id="user_info_right">
+                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
+                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
+                    <p>Available: 2:00AM to 5:PM[dlfije dfjijel fiaeje dfiej dfj]</p>
+                    <p>Address: dfjienldfjdlifj 2/3road dfjiendfidjfle</p>
+                    <p>Phone: 08464684156454686</p>
+                    <p>E-mail: jdifjleafjaidjfldjkf@dfjidjf.com</p>
+                    <p>Facebook: facebook.com/jdfiejljljfldjfiejdkfj</p>
+                </div>
+                <a class="user_info_action" href="AdminDelete.php">Delete</a>
+                <a class="user_info_action" href="AdminUpdate.php">Update</a>
             </div>
         </div>
         

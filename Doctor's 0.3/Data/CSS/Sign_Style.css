@@ -42,6 +42,15 @@ body {
     text-align: left;
 }
 
+.middle_body_update{
+    display: none;
+    height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    color: black;
+    text-align: left;
+}
+
 table{
     width: 60%;
     margin: 0 auto;

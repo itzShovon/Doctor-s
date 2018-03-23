@@ -11,12 +11,22 @@
             <form name="signin" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <table>
                     <tr>
-                        <th>User ID/E-mail</th>
+                        <th>User Name</th>
                         <td><input class="user_name" id="user_name" name="user_name" type="text" placeholder="User Name" autofocus></td>
                     </tr>
                     <tr>
                         <th>Password</th>
                         <td><input class="user_password" id="user_password" name="user_password" type="password" placeholder="User Password"></td>
+                    </tr>
+                    <tr>
+                        <th>Sector</th>
+                        <td>
+                            <select class="user_sector" id="user_sector" name="user_sector">
+                                <option value="doctor">Doctor</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="blood_donor">Blood Donor</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td><button type="submit" name="signin" onclick="return RegisterValidation();">SignIn</button></td>
