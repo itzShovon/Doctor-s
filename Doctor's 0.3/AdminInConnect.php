@@ -47,7 +47,7 @@
                             $_SESSION['login_mode'] = 1;
                             $_SESSION['login_flag'] = 1;
                             $_SESSION['login_user'] = $row->admin_no;
-                            header ('Location: AdminDocument.php');
+                            header ('Location: AdminDocument.php?id=0&mode=0');
                         }
                         else;
                     }

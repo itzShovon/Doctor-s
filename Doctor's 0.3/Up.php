@@ -1,3 +1,7 @@
+<?php
+    include("UpConnect.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +13,7 @@
 <body>
     <div class="Middle" id="Middle">
         <div class="middle">
-            <form name="signup" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+            <form name="user_signup" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <th>User Name</th>
@@ -42,7 +46,7 @@
                     <tr>
                         <th>Sector</th>
                         <td>
-                            <select>
+                            <select class="user_sector" id="user_sector" name="user_sector">
                                 <option value="Doctor">Doctor</option>
                                 <option value="Hospital">Hospital</option>
                                 <option value="Blood Donor">Blood Donor</option>
@@ -57,9 +61,7 @@
             </form>
         </div>
     </div>
-    <div class="Footer" id="Footer">
-        <?php include 'Footer.php' ?>
-    </div>
+    <div class="Footer" id="Footer"></div>
 </body>
 
 </html>

@@ -1,3 +1,7 @@
+<?php
+    include "InConnect.php";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +12,7 @@
 <body>
     <div class="Middle" id="Middle">
         <div class="middle">
-            <form name="signin" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+            <form name="signin_form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <th>User Name</th>
@@ -29,16 +33,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><button type="submit" name="signin" onclick="return RegisterValidation();">SignIn</button></td>
+                        <td><button type="submit" name="signin">SignIn</button></td>
                         <td><button type="reset">Reset</button></td>
                     </tr>
                 </table>
             </form>
         </div>
     </div>
-    <div class="Footer" id="Footer">
-        <?php include 'Footer.php' ?>
-    </div>
+    <div class="Footer" id="Footer"></div>
 </body>
 
 </html>

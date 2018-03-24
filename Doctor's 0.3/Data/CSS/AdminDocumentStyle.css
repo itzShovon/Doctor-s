@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     border: 0;
+    color: black;
 }
 
 .middle_left{
@@ -16,7 +17,7 @@
 }
 
 .user_list{
-    display: none;
+/*    display: none;*/
     width: 100%;
     height: auto;
 }

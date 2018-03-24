@@ -6,5 +6,5 @@
     $_SESSION['login_flag'] = "0";
     $_SESSION['login_user'] = "0";
 //    session_destroy();
-    header('Location: Admin.php');
+    header('Location: Home.php');
 ?>

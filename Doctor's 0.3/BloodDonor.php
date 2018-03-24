@@ -17,7 +17,18 @@
         <div class="header" id="header">
             <div class="header_left" id="header_left">
                 <a href="Home.php"><img src="Data/Images/Icon/Icon.png" alt="Doctor's" height="42" width="42"></a>
-                <a href="Sign.php">Sign In/Up</a>
+                <?php
+                    if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode']) == 1){
+                ?>
+                    <a class="user_info_action" href="SignOut.php">Logout</a>
+                <?php
+                    }
+                ?>
+                <?php
+                    if($_SESSION['login_flag'] == 0){
+                ?>
+                    <a href="Sign.php">Sign In/Up</a>
+                <?php } ?>
             </div>
             <div class="header_right" id="header_right">
                 <form name="search_form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
@@ -67,8 +78,7 @@
                     ?>
                 </div>
                 <?php
-                    session_start();
-                    if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode']) == 2){
+                    if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode']) == 1){
                 ?>
                     <a class="user_info_action" href="Delete.php">Delete</a>
                     <a class="user_info_action" href="Update.php">Update</a>

@@ -28,7 +28,9 @@
             </div>
         </div>
     </div>
-    <div class="Footer" id="Footer"></div>
+    <div class="Footer" id="Footer">
+        <?php include 'Footer.php' ?>
+    </div>
 </body>
 
 </html>

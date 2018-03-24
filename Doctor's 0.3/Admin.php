@@ -19,7 +19,7 @@
                 $_SESSION['login_flag'] = 0;
             else if($_SESSION['login_flag'] == 1 && $_SESSION['login_mode'] == "1"){
                 echo '<a href="SignOut.php">Sign Out</a>';
-                echo '<a href="AdminDocument.php">Document</a>';
+                echo '<a href="AdminDocument.php?id=0&mode=0">Document</a>';
             }
             else{
                 echo "<script type='text/javascript'>alert('Something wrong... Try again later...')</script>";
