@@ -17,7 +17,11 @@
 <!--                    <a href="Doctor.php">Doctor</a>-->
 <!--                    <a href="Hospital.php">Hospital</a>-->
 <!--                    <a href="Blood%20Donor.php">Blood Donor</a>-->
-                    <a href="Sign.php">Sign In/Up</a>
+                    <?php if($_SESSION['login_flag'] == 1){ ?>
+                        <a href="SignOut.php">Sign Out</a>
+                    <?php }else{ ?>
+                        <a href="Sign.php">Sign In/Up</a>
+                    <?php } ?>
                 </div>
             </div>
             <div class="header_part2" id="header_part2">

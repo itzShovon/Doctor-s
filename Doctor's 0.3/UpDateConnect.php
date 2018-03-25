@@ -13,6 +13,20 @@
                 $statement1->execute();
                 $result1 = $statement1->fetchAll(PDO::FETCH_OBJ);
             }
+            else if($login_mode == 3){
+                $statement2 = $db->prepare("SELECT * FROM hospitals WHERE hospital_no = $login_user");
+                $statement2->execute();
+                $result2 = $statement2->fetchAll(PDO::FETCH_OBJ);
+            }
+            else if($login_mode == 4){
+                $statement3 = $db->prepare("SELECT * FROM blood_donors WHERE blood_donor_no = $login_user");
+                $statement3->execute();
+                $result3 = $statement3->fetchAll(PDO::FETCH_OBJ);
+            }
+        }
+        
+        if(isset($_POST['update_account'])){
+            
         }
     }
     catch (Exception $ex) {
