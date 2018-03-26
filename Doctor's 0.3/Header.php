@@ -31,13 +31,13 @@
                 <h5>To simplify your healthcare system...</h5>
             </div>
             <div class="header_part3" id="header_part3">
-                <form name="header_search" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+                <form name="header_search" method="post" action="GuestDocument.php?mode=0&id=0" enctype="multipart/form-data">
 <!--                    <input list="sector" name="sector" placeholder="Select a sector">-->
 <!--                    <datalist id="sector">-->
-                    <select>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Hospital">Hospital</option>
-                        <option value="Blood Donor">Blood Donor</option>
+                    <select name="sector">
+                        <option value="doctors">Doctor</option>
+                        <option value="hospitals">Hospital</option>
+                        <option value="blood_donors">Blood Donor</option>
                     </select>
 <!--                    </datalist>-->
                     

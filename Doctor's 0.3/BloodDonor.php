@@ -1,5 +1,8 @@
 <?php
+    session_start();
     include("BloodDonorConnect.php");
+    $_SESSION['sector'] = "blood_donors";
+    $_SESSION['city'] = "";
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +34,8 @@
                 <?php } ?>
             </div>
             <div class="header_right" id="header_right">
-                <form name="search_form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-                    <input class="blood_donor_name" id="blood_donor_name" name="blood_donor_name" type="text" placeholder="Search by Blood Donor Name." autofocus>
+                <form name="search_form" method="post" action="GuestDocument.php?mode=0&id=0" enctype="multipart/form-data">
+                    <input class="blood_donor_name" id="blood_donor_name" name="keyword" type="text" placeholder="Search by Blood Donor Name." autofocus>
                     <button type="submit" name="user_submit">Search</button>
                 </form>
             </div>
@@ -61,10 +64,14 @@
             ?>
             <div class="doctor_info" id="doctor_info">
                 <div class="doctor_info_left" id="doctor_info_left">
-                    <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
+                    <?php if($row->blood_donor_picture != ""){ ?>
+                        <img src='Data/Images/Blood_Donor/<?php echo $row->blood_donor_picture; ?>' alt="Doctors Photo" height="42" width="42">
+                    <?php }else{ ?>
+                        <img src='Data/Images/Blood_Donor/Blood%20Donor%20Profile.png' alt="Blood Donors Photo" height="42" width="42">
+                    <?php } ?>
                     <?php
                         echo "<h3>$row->blood_donor_name</h3>";
-                        echo "<h5>$row->blood_donor_job[$row->blood_donor_city]</h5>";
+                        echo "<h5>$row->blood_donor_group</h5>";
                     ?>
                 </div>
                 <div class="doctor_info_right" id="doctor_info_right">

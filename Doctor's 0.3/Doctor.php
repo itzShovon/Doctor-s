@@ -1,5 +1,8 @@
 <?php
+    session_start();
     include("DoctorConnect.php");
+    $_SESSION['sector'] = "doctors";
+    $_SESSION['city'] = "";
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +21,7 @@
             <div class="header_left" id="header_left">
                 <a href="Home.php"><img src="Data/Images/Icon/Icon.png" alt="Doctor's" height="42" width="42"></a>
                 <?php
-                    session_start();
+//                    session_start();
                     if($_SESSION['login_flag'] == 1){
                 ?>
                     <a class="user_info_action" href="SignOut.php">Logout</a>
@@ -32,8 +35,8 @@
                 <?php } ?>
             </div>
             <div class="header_right" id="header_right">
-                <form name="search_form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-                    <input class="doctor_name" id="doctor_name" name="doctor_name" type="text" placeholder="Search by Doctor Name." autofocus>
+                <form name="search_form" method="post" action="GuestDocument.php?mode=0&id=0" enctype="multipart/form-data">
+                    <input class="doctor_name" id="doctor_name" name="keyword" type="text" placeholder="Search by Doctor Name." autofocus>
                     <button type="submit" name="user_submit">Search</button>
                 </form>
             </div>
@@ -62,7 +65,11 @@
             ?>
                 <div class="doctor_info" id="doctor_info">
                     <div class="doctor_info_left" id="doctor_info_left">
-                        <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
+                        <?php if($row->doctor_picture != ""){ ?>
+                            <img src='Data/Images/Doctor/<?php echo $row->doctor_picture; ?>' alt="Doctors Photo" height="42" width="42">
+                        <?php }else{ ?>
+                            <img src='Data/Images/Doctor/Doctor%20Profile.png' alt="Doctors Photo" height="42" width="42">
+                        <?php } ?>
                         <?php
                             echo "<h3>$row->doctor_name</h3>";
                             echo "<h5>$row->doctor_degree[$row->doctor_job]</h5>";

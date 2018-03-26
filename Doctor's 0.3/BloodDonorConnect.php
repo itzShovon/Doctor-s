@@ -1,7 +1,7 @@
 <?php
     include ("config.php");
     try{
-        session_start();
+//        session_start();
         $statement = $db->prepare("SELECT * FROM blood_donors WHERE true");
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_OBJ);

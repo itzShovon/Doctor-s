@@ -1,5 +1,9 @@
 <?php
+    session_start();
     include("HospitalConnect.php");
+    
+    $_SESSION['sector'] = "hospitals";
+    $_SESSION['city'] = "";
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +22,7 @@
             <div class="header_left" id="header_left">
                 <a href="Home.php"><img src="Data/Images/Icon/Icon.png" alt="Doctor's" height="42" width="42"></a>
                 <?php
-                    session_start();
+//                    session_start();
                     if($_SESSION['login_flag'] == 1){
                 ?>
                     <a class="user_info_action" href="SignOut.php">Logout</a>
@@ -32,8 +36,8 @@
                 <?php } ?>
             </div>
             <div class="header_right" id="header_right">
-                <form name="search_form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-                    <input class="hospital_name" id="hospital_name" name="hospital_name" type="text" placeholder="Search by Hospital Name." autofocus>
+                <form name="search_form" method="post" action="GuestDocument.php?mode=0&id=0" enctype="multipart/form-data">
+                    <input class="hospital_name" id="hospital_name" name="keyword" type="text" placeholder="Search by Hospital Name." autofocus>
                     <button type="submit" name="user_submit">Search</button>
                 </form>
             </div>
@@ -62,10 +66,14 @@
             ?>
                 <div class="doctor_info" id="doctor_info">
                     <div class="doctor_info_left" id="doctor_info_left">
-                        <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Hospital's Photo" height="42" width="42">
+                        <?php if($row->hospital_picture != ""){ ?>
+                            <img src='Data/Images/Hospital/<?php echo $row->hospital_picture; ?>' alt="Hospitals Photo" height="42" width="42">
+                        <?php }else{ ?>
+                            <img src='Data/Images/Hospital/Hospital%20Profile.png' alt="Hospitals Photo" height="42" width="42">
+                        <?php } ?>
                         <?php
                             echo "<h3>$row->hospital_name</h3>";
-                            echo "<h5>$row->hospital_city [$row->hospital_region]</h5>";
+                            echo "<h5>$row->hospital_city[$row->hospital_region]</h5>";
                         ?>
                     </div>
                     <div class="doctor_info_right" id="doctor_info_right">
