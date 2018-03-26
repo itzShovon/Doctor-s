@@ -17,6 +17,7 @@
 <!--                    <a href="Doctor.php">Doctor</a>-->
 <!--                    <a href="Hospital.php">Hospital</a>-->
 <!--                    <a href="Blood%20Donor.php">Blood Donor</a>-->
+                    <?php session_start(); ?>
                     <?php if($_SESSION['login_flag'] == 1){ ?>
                         <a href="SignOut.php">Sign Out</a>
                     <?php }else{ ?>

@@ -18,7 +18,7 @@
             <div class="header_left" id="header_left">
                 <a href="Home.php"><img src="Data/Images/Icon/Icon.png" alt="Doctor's" height="42" width="42"></a>
                 <?php
-                    if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode']) == 1){
+                    if($_SESSION['login_flag'] == 1){
                 ?>
                     <a class="user_info_action" href="SignOut.php">Logout</a>
                 <?php

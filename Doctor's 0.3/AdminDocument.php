@@ -90,7 +90,7 @@
                                     echo "<p>E-Mail: $row->doctor_email</p>";
                                 ?>
                             </div>
-                            <a class="user_info_action" href="AdminDelete.php">Delete</a>
+                            <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->doctor_no; ?>&mode=2">Delete</a>
                             <a class="user_info_action" href="AdminUpdate.php">Update</a>
                         </div>
                     <?php } ?>
@@ -118,7 +118,7 @@
                                 echo "<p>E-Mail: $row->hospital_email</p>";
                             ?>
                         </div>
-                            <a class="user_info_action" href="AdminDelete.php">Delete</a>
+                            <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->hospital_no; ?>&mode=3">Delete</a>
                             <a class="user_info_action" href="AdminUpdate.php">Update</a>
                         </div>
                     <?php } ?>
@@ -147,7 +147,7 @@
                                     echo "<p>E-Mail: $row->blood_donor_email</p>";
                                 ?>
                             </div>
-                            <a class="user_info_action" href="AdminDelete.php">Delete</a>
+                            <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->blood_donor_no; ?>&mode=4">Delete</a>
                             <a class="user_info_action" href="AdminUpdate.php">Update</a>
                         </div>
                     <?php } ?>

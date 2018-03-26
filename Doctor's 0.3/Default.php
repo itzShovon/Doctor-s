@@ -9,5 +9,6 @@
 
 //        login mode info(Admin = 1, doctor = 2, hospital = 3, blood donor = 4)
 
-    include 'Home.php';
+    header('Location: Home.php');
+//    include 'Home.php';
 ?>
