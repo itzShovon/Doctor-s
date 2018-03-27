@@ -60,17 +60,19 @@
 .header_part2 h2{
 /*    float: left;*/
     margin-left: 22%;
-    font-size: 34px;
-    color: black;
+    font-size: 60px;
+    color: #002f2f;
+    border-bottom: 2px solid #737373;
+    width: 60%;
 }
 
 .header_part2 h5{
     text-transform: capitalize;
     float: left;
 /*    clear: both;*/
-    color: black;
+    color: #004d4d;
     margin-left: 22%;
-    font-size: 24px;
+    font-size: 35px;
 }
 
 .header_part3{

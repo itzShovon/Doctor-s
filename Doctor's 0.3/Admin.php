@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Admin Page...</title>
+    <title>Admin...</title>
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/Style.css">
     <link rel="stylesheet" type="text/css" href="Data/CSS/Sign_Style.css">

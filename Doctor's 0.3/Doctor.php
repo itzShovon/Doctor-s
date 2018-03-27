@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>Doctor Page...</title>
+    <title>Doctor...</title>
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DoctorStyle.css">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DocumentStyle.css">

@@ -8,7 +8,7 @@
 <html>
 
 <head>
-    <title>Admin Document Page...</title>
+    <title>Searched Result...</title>
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DoctorStyle.css">
     <link rel="stylesheet" type="text/css" href="Data/CSS/AdminDocumentStyle.css">

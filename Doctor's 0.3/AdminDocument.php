@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title>Admin Document Page...</title>
+    <title>Admin Document...</title>
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DoctorStyle.css">
     <link rel="stylesheet" type="text/css" href="Data/CSS/AdminDocumentStyle.css">
@@ -95,7 +95,7 @@
                                 ?>
                             </div>
                             <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->doctor_no; ?>&mode=2">Delete</a>
-                            <a class="user_info_action" href="AdminUpdate.php">Update</a>
+                            <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->doctor_no; ?>&mode=2">Update</a>
                         </div>
                     <?php } ?>
                 <?php } ?>
@@ -127,7 +127,7 @@
                                 ?>
                             </div>
                             <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->hospital_no; ?>&mode=3">Delete</a>
-                            <a class="user_info_action" href="AdminUpdate.php">Update</a>
+                            <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->hospital_no; ?>&mode=3">Update</a>
                         </div>
                     <?php } ?>
                 <?php } ?>
@@ -160,7 +160,7 @@
                                 ?>
                             </div>
                             <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->blood_donor_no; ?>&mode=4">Delete</a>
-                            <a class="user_info_action" href="AdminUpdate.php">Update</a>
+                            <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->blood_donor_no; ?>&mode=4">Update</a>
                         </div>
                     <?php } ?>
                 <?php } ?>

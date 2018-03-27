@@ -11,7 +11,7 @@
         <div class="footer" id="footer">
             <div class="footer_site" id="footer_site">
                 <p>Contact US</p>
-                <a href="mailto:zahidul.cse14@gmail.com?Subject=Hello%20again" target="_top">Send Mail</a>
+                <a href="mailto:zahidul.cse14@gmail.com?Subject=Doctor's%20Project" target="_top">Send Mail</a>
                 <a href="https://www.facebook.com/profile.php?id=100008294657911" target="_blank"><img src="Data/Images/Footer/facebook-icon.png" alt="Connect to Facebook" height="42" width="42"></a>
                 <a href="https://plus.google.com/107761039335661253814" target="_blank"><img src="Data/Images/Footer/Google-plus-circle-icon.png" alt="Connect to Google+" height="42" width="42"></a>
             </div>
@@ -26,6 +26,7 @@
                     <div class="person_right">
                         <p>Find me on...</p>
                         <p>Phone: +8801557422282</p>
+                        <p>E-Mail: zahidul.cse14@gmail.com</p>
                         <a href="mailto:zahidul.cse14@gamil.com?Subject=Hello%20again" target="_top">E-Mail Me</a>
                         <a href="https://www.facebook.com/profile.php?id=100008294657911" title="Connect to Facebook" target="_blank"><img src="Data/Images/Footer/facebook-icon.png" alt="Connect to Facebook" height="42" width="42"></a>
                         <a href="https://plus.google.com/107761039335661253814" title="Connect to Google+" target="_blank"><img src="Data/Images/Footer/Google-plus-circle-icon.png" alt="Connect to Google+" height="42" width="42"></a>

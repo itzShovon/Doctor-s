@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>Blood Donor Page...</title>
+    <title>Blood Donor...</title>
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DoctorStyle.css">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DocumentStyle.css">

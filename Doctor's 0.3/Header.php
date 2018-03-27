@@ -57,9 +57,9 @@
             </div>
             <div class="header_part4" id="header_part4">
                 <hr>
-                <a href="Doctor.php" class="doctor_service" id="doctor_service" title="Doctor Service"><img src="Data/Images/Doctor/Doctor_Service.png" alt="Doctor's" height="42" width="42"></a>
-                <a href="Hospital.php" title="Hospital Service" class="hospital_service" id="hospital_service"><img src="Data/Images/Hospital/Hospital_Service.png" alt="Doctor's" height="42" width="42"></a>
-                <a href="BloodDonor.php" title="Blood Donor Center" class="blood_donor_service" id="blood_donor_service"><img src="Data/Images/Blood_Donor/Blood_Donor_Service.png" alt="Doctor's" height="42" width="42"></a>
+                <a href="Doctor.php?id=0" class="doctor_service" id="doctor_service" title="Doctor Service"><img src="Data/Images/Doctor/Doctor_Service.png" alt="Doctor's" height="42" width="42"></a>
+                <a href="Hospital.php?id=0" title="Hospital Service" class="hospital_service" id="hospital_service"><img src="Data/Images/Hospital/Hospital_Service.png" alt="Doctor's" height="42" width="42"></a>
+                <a href="BloodDonor.php?id=0" title="Blood Donor Center" class="blood_donor_service" id="blood_donor_service"><img src="Data/Images/Blood_Donor/Blood_Donor_Service.png" alt="Doctor's" height="42" width="42"></a>
             </div>
         </div>
     </div>
