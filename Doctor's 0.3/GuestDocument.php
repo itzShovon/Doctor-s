@@ -19,9 +19,17 @@
         <div class="header" id="header">
             <div class="header_left" id="header_left">
                 <a href="Home.php"><img src="Data/Images/Icon/Icon.png" alt="Doctor's" height="42" width="42"></a>
-                <a href="Sign.php">Sign In/Up</a>
+                <?php
+                    if($_SESSION['login_flag'] == 1){
+                ?>
+                    <a class="user_info_action" href="SignOut.php">Logout</a>
+                <?php
+                    }else{
+                ?>
+                    <a href="Sign.php">Sign In/Up</a>
+                <?php } ?>
 <!--                <a href="Admin.php">Admin Home</a>-->
-                <a href="javascript:history.go(-1)">Back</a>
+<!--                <a href="javascript:history.go(-1)">Back</a>-->
 <!--                <a href="AdminUpdate.php">Update Password</a>-->
 <!--                <a href="SignOut.php">Sign Out</a>-->
             </div>
@@ -82,7 +90,11 @@
                     ?>
                         <div class="user_info" id="user_info">
                             <div class="user_info_left" id="user_info_left">
-                                <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
+                                <?php if($row->doctor_picture == ""){ ?>
+                                    <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
+                                <?php }else{ ?>
+                                    <img src="Data/Images/Doctor/<?php echo $row->doctor_picture; ?>" alt="Doctor's Photo" height="42" width="42">
+                                <?php } ?>
                                 <?php
                                     echo "<h3>$row->doctor_name</h3>";
                                     echo "<h5>$row->doctor_degree[$row->doctor_job]</h5>";
@@ -99,6 +111,10 @@
                                     echo "<p>E-Mail: $row->doctor_email</p>";
                                 ?>
                             </div>
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->doctor_no; ?>&mode=2">Delete</a>
+                                <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->doctor_no; ?>&mode=2">Update</a>
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 <?php } ?>
@@ -110,7 +126,11 @@
                     ?>
                         <div class="user_info" id="user_info">
                             <div class="user_info_left" id="user_info_left">
-                                <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Hospital's Photo" height="42" width="42">
+                                <?php if($row->hospital_picture == ""){ ?>
+                                    <img src="Data/Images/Hospital/Hospital%20Profile.png" alt="Hospital's Photo" height="42" width="42">
+                                <?php }else{ ?>
+                                    <img src="Data/Images/Hospital/<?php echo $row->hospital_picture; ?>" alt="Hospital's Photo" height="42" width="42">
+                                <?php } ?>
                                 <?php
                                     echo "<h3>$row->hospital_name</h3>";
                                     echo "<h5>$row->hospital_city [$row->hospital_region]</h5>";
@@ -125,6 +145,10 @@
                                     echo "<p>E-Mail: $row->hospital_email</p>";
                                 ?>
                             </div>
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->hospital_no; ?>&mode=3">Delete</a>
+                                <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->hospital_no; ?>&mode=3">Update</a>
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 <?php } ?>
@@ -136,7 +160,11 @@
                     ?>
                         <div class="user_info" id="user_info">
                             <div class="user_info_left" id="user_info_left">
-                                <img src="Data/Images/Doctor/Doctor%20Profile.png" alt="Doctor's Photo" height="42" width="42">
+                                <?php if($row->blood_donor_picture == ""){ ?>
+                                    <img src="Data/Images/Blood_Donor/Blood%20Donor%20Profile.png" alt="Blood Donor's Photo" height="42" width="42">
+                                <?php }else{ ?>
+                                    <img src="Data/Images/Blood_Donor/<?php echo $row->blood_donor_picture; ?>" alt="Blood Donor's Photo" height="42" width="42">
+                                <?php } ?>
                                 <?php
                                     echo "<h3>$row->blood_donor_name</h3>";
                                     echo "<h5>$row->blood_donor_job[$row->blood_donor_city]</h5>";
@@ -152,6 +180,10 @@
                                     echo "<p>E-Mail: $row->blood_donor_email</p>";
                                 ?>
                             </div>
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminDelete.php?id=<?php echo $row->blood_donor_no; ?>&mode=4">Delete</a>
+                                <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->blood_donor_no; ?>&mode=4">Update</a>
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 <?php } ?>

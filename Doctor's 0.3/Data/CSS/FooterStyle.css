@@ -28,7 +28,7 @@
 
 .person .person_left{
     float: left;
-    margin-left: 10px;
+    margin-left: 0px;
 /*    margin-top: 10px;*/
     background-color: #8c8c8c;
     width: 45%;
@@ -43,7 +43,7 @@
 .person .person_left h3{
     font-size: 35px;
     color: black;
-    margin-left: 26%;
+    margin-left: 10%;
 }
 
 .person .person_right{

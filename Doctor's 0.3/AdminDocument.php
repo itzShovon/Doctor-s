@@ -23,10 +23,12 @@
                 <a href="SignOut.php">Sign Out</a>
             </div>
             <div class="header_right" id="header_right">
+<!--
                 <form name="search_form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                     <input class="user_name" id="user_name" name="user_name" type="text" placeholder="Search by Name." autofocus>
                     <button type="submit" name="user_submit">Search</button>
                 </form>
+-->
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
     include ("config.php");
     try{
         session_start();
-        if(($_SESSION['login_flag'] == 0) && ($_SESSION['login_mode'] == 0)){
+//        if(($_SESSION['login_flag'] == 0) && ($_SESSION['login_mode'] == 0)){
             if(isset($_POST['header_search'])){
                 $view_mode = "";
                 $sector = "";
@@ -48,7 +48,7 @@
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_OBJ);
             }
-        }
+//        }
     }
     catch (Exception $ex) {
         echo $ex->getMessage();
