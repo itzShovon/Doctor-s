@@ -10,6 +10,7 @@
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DoctorStyle.css">
     <link rel="stylesheet" type="text/css" href="Data/CSS/AdminDocumentStyle.css">
+    <link rel="stylesheet" type="text/css" href="Data/CSS/GuestDocumentStyle.css">
 </head>
 
 <body>
@@ -100,6 +101,19 @@
                             <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->doctor_no; ?>&mode=2">Update</a>
                         </div>
                     <?php } ?>
+                    <div class="comment" id="comment">
+                        <?php foreach($result1X as $row){
+//                            if($row->doctor_no == $user_ID){
+                        ?>
+                            <h5>E-mail: <?php echo $row->writers_email; ?></h5>
+                            <p>Rated: <?php echo $row->writers_rating; ?></p>
+                            <p>Says: <?php echo $row->comment; ?></p>
+
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminCommentDelete.php?id=<?php echo $row->comment_no; ?>&mode=2">Delete</a>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
                 <?php } ?>
                 
                 <h4>Hospitals</h4>
@@ -132,6 +146,19 @@
                             <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->hospital_no; ?>&mode=3">Update</a>
                         </div>
                     <?php } ?>
+                    <div class="comment" id="comment">
+                        <?php foreach($result2X as $row){
+//                            if($row->hospital_no == $user_ID){
+                        ?>
+                            <h5>E-mail: <?php echo $row->writers_email; ?></h5>
+                            <p>Rated: <?php echo $row->writers_rating; ?></p>
+                            <p>Says: <?php echo $row->comment; ?></p>
+
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminCommentDelete.php?id=<?php echo $row->comment_no; ?>&mode=3">Delete</a>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
                 <?php } ?>
                 
                 <h4>Blood Donors</h4>
@@ -165,6 +192,19 @@
                             <a class="user_info_action" href="AdminUpdate.php?id=<?php echo $row->blood_donor_no; ?>&mode=4">Update</a>
                         </div>
                     <?php } ?>
+                    <div class="comment" id="comment">
+                        <?php foreach($result3X as $row){
+//                            if($row->blood_donor_no == $user_ID){
+                        ?>
+                            <h5>E-mail: <?php echo $row->writers_email; ?></h5>
+                            <p>Rated: <?php echo $row->writers_rating; ?></p>
+                            <p>Says: <?php echo $row->comment; ?></p>
+
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminCommentDelete.php?id=<?php echo $row->comment_no; ?>&mode=4">Delete</a>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
                 <?php } ?>
             <?php } ?>
         </div>

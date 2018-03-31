@@ -12,6 +12,7 @@
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DoctorStyle.css">
     <link rel="stylesheet" type="text/css" href="Data/CSS/AdminDocumentStyle.css">
+    <link rel="stylesheet" type="text/css" href="Data/CSS/GuestDocumentStyle.css">
 </head>
 
 <body>
@@ -29,6 +30,7 @@
                     <a href="Sign.php">Sign In/Up</a>
                 <?php } ?>
 <!--                <a href="Admin.php">Admin Home</a>-->
+                <a href="GuestDocument.php?mode=0&id=0">Back</a>
 <!--                <a href="javascript:history.go(-1)">Back</a>-->
 <!--                <a href="AdminUpdate.php">Update Password</a>-->
 <!--                <a href="SignOut.php">Sign Out</a>-->
@@ -117,6 +119,20 @@
                             <?php } ?>
                         </div>
                     <?php } ?>
+            
+                    <div class="comment" id="comment">
+                        <?php foreach($resultX as $row){
+//                            if($row->doctor_no == $user_ID){
+                        ?>
+                            <h5>E-mail: <?php echo $row->writers_email; ?></h5>
+                            <p>Rated: <?php echo $row->writers_rating; ?></p>
+                            <p>Says: <?php echo $row->comment; ?></p>
+
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminCommentDelete.php?id=<?php echo $row->comment_no; ?>&mode=2">Delete</a>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
                 <?php } ?>
                 
                 <h4>Hospitals</h4>
@@ -151,6 +167,19 @@
                             <?php } ?>
                         </div>
                     <?php } ?>
+                    <div class="comment" id="comment">
+                        <?php foreach($resultX as $row){
+//                            if($row->hospital_no == $user_ID){
+                        ?>
+                            <h5>E-mail: <?php echo $row->writers_email; ?></h5>
+                            <p>Rated: <?php echo $row->writers_rating; ?></p>
+                            <p>Says: <?php echo $row->comment; ?></p>
+
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminCommentDelete.php?id=<?php echo $row->comment_no; ?>&mode=3">Delete</a>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
                 <?php } ?>
                 
                 <h4>Blood Donors</h4>
@@ -186,6 +215,19 @@
                             <?php } ?>
                         </div>
                     <?php } ?>
+                    <div class="comment" id="comment">
+                        <?php foreach($resultX as $row){
+//                            if($row->blood_donor_no == $user_ID){
+                        ?>
+                            <h5>E-mail: <?php echo $row->writers_email; ?></h5>
+                            <p>Rated: <?php echo $row->writers_rating; ?></p>
+                            <p>Says: <?php echo $row->comment; ?></p>
+
+                            <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                                <a class="user_info_action" href="AdminCommentDelete.php?id=<?php echo $row->comment_no; ?>&mode=4">Delete</a>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
                 <?php } ?>
             <?php } ?>
         </div>

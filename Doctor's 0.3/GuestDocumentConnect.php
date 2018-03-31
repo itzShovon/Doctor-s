@@ -37,16 +37,29 @@
                 $statement = $db->prepare("SELECT * FROM doctors WHERE doctor_name LIKE '%$name%' AND doctor_city LIKE '%$city%'");
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                
+                
+                $statementX = $db->prepare("SELECT * FROM comment_doctors WHERE doctor_no = '$user_ID'");
+                $statementX->execute();
+                $resultX = $statementX->fetchAll(PDO::FETCH_OBJ);
             }
             else if($sector == "hospitals"){
                 $statement = $db->prepare("SELECT * FROM hospitals WHERE hospital_name LIKE '%$name%' AND hospital_city LIKE '%$city%'");
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                
+                $statementX = $db->prepare("SELECT * FROM comment_hospitals WHERE hospital_no = '$user_ID'");
+                $statementX->execute();
+                $resultX = $statementX->fetchAll(PDO::FETCH_OBJ);
             }
             else if($sector == "blood_donors"){
                 $statement = $db->prepare("SELECT * FROM blood_donors WHERE blood_donor_name LIKE '%$name%' AND blood_donor_city LIKE '%$city%'");
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                
+                $statementX = $db->prepare("SELECT * FROM comment_blood_donors WHERE blood_donor_no = '$user_ID'");
+                $statementX->execute();
+                $resultX = $statementX->fetchAll(PDO::FETCH_OBJ);
             }
 //        }
     }

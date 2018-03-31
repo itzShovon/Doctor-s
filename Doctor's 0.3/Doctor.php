@@ -13,6 +13,7 @@
     <link rel="icon" href="Data/Images/Icon/Title.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DoctorStyle.css">
     <link rel="stylesheet" type="text/css" href="Data/CSS/DocumentStyle.css">
+    <link rel="stylesheet" type="text/css" href="Data/CSS/GuestDocumentStyle.css">
 </head>
 
 <body>
@@ -95,10 +96,22 @@
                         }
                     ?>
                 </div>
-            <?php
-                }
-            }
-            ?>
+            <?php } ?>
+            
+            <div class="comment" id="comment">
+                <?php foreach($resultX as $row){
+//                            if($row->doctor_no == $user_ID){
+                ?>
+                    <h5>E-mail: <?php echo $row->writers_email; ?></h5>
+                    <p>Rated: <?php echo $row->writers_rating; ?></p>
+                    <p>Says: <?php echo $row->comment; ?></p>
+
+                    <?php if(($_SESSION['login_flag'] == 1) && ($_SESSION['login_mode'] == 1)){ ?>
+                        <a class="user_info_action" href="AdminCommentDelete.php?id=<?php echo $row->comment_no; ?>&mode=2">Delete</a>
+                    <?php } ?>
+                <?php } ?>
+            </div>
+            <?php } ?>
         </div>
         
         

@@ -33,16 +33,31 @@
                 $statement1 = $db->prepare("SELECT * FROM doctors WHERE doctor_no = $user_ID");
                 $statement1->execute();
                 $result1 = $statement1->fetchAll(PDO::FETCH_OBJ);
+                
+                
+                $statement1X = $db->prepare("SELECT * FROM comment_doctors WHERE doctor_no = '$user_ID'");
+                $statement1X->execute();
+                $result1X = $statement1X->fetchAll(PDO::FETCH_OBJ);
             }
             else if($user_mode == 3){
                 $statement2 = $db->prepare("SELECT * FROM hospitals WHERE hospital_no = $user_ID");
                 $statement2->execute();
                 $result2 = $statement2->fetchAll(PDO::FETCH_OBJ);
+                
+                
+                $statement2X = $db->prepare("SELECT * FROM comment_hospitals WHERE hospital_no = '$user_ID'");
+                $statement2X->execute();
+                $result2X = $statement2X->fetchAll(PDO::FETCH_OBJ);
             }
             else if($user_mode == 4){
                 $statement3 = $db->prepare("SELECT * FROM blood_donors WHERE blood_donor_no = $user_ID");
                 $statement3->execute();
                 $result3 = $statement3->fetchAll(PDO::FETCH_OBJ);
+                
+                
+                $statement3X = $db->prepare("SELECT * FROM comment_blood_donors WHERE blood_donor_no = '$user_ID'");
+                $statement3X->execute();
+                $result3X = $statement3X->fetchAll(PDO::FETCH_OBJ);
             }
         }
     }

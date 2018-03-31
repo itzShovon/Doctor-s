@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.comment{
+    max-width: 90%;
+    padding: 20px 0;
+    padding-left: 10%;
+    margin: 5px 0;
+    height: auto;
+    color: rgba(13, 13, 13);
+    background-color: rgba(209, 209, 209, 0.6);
+    text-align: left;
+/*    padding: 20px 0 20px 30px;*/
+/*    margin-left: 10%;*/
+    clear: both;
+}
+
+.comment h5{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.comment p{
+    font-size: 18px;
+}
